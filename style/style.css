@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carousel .carousel-item img {
+    height: 30rem;
+}
+tbody {
+    counter-reset: rowNumber;
+}
+
+td.row-number::before {
+    counter-increment: rowNumber;
+    content: counter(rowNumber);
+}
+table tr td img{
+    height: 15px;
+}
