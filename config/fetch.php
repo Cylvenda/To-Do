@@ -139,10 +139,10 @@ function getUserProfile($conn, $user_id){
         ?>
     <div class="container p-3 d-flex justify-content-around">
 
-        <h3>Welcome <a href="data.php?user=<?php echo $_SESSION['user_id'] ?>"><?php echo $_SESSION['username'] ?></a>
+        <h3>Welcome <a class="btn btn-primary" href="data.php?user=<?php echo $_SESSION['user_id'] ?>"><?php echo $_SESSION['username'] ?></a>
         </h3>
             
-        <h2>Delete Your Account  <a href="data.php?deleteUser=<?php echo $_SESSION['user_id'] ?>">Delete Acouint</a></h2>
+        <h3>Delete Your Account  <a class="btn btn-danger" href="data.php?deleteUser=<?php echo $_SESSION['user_id'] ?>">Delete Account</a></h3>
     </div>
             
     <div class="container mt-5 p-5 w-50 bg-secondary bg-gradient rounded text-dark">
@@ -161,7 +161,7 @@ function getUserProfile($conn, $user_id){
             ?>
             <?php endif; ?>
 
-            <h3>Register To My To-Do</h3>
+            <h3><?php echo $_SESSION['username'] ?> Profile Edit</h3>
             <form action="../config/formHandler.php" method="post" class="needs-validation ">
                 <div class="mb-3 mt-3">
                     <label for="username" class="form-label">Username:</label>
@@ -175,18 +175,13 @@ function getUserProfile($conn, $user_id){
                         placeholder="Enter username" name="email">
                 </div>
 
-
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="myCheck" name="remember">
-                    <label class="form-check-label" for="myCheck">I agree on the Terms and Conditions</label>
-                </div>
-
                 <div class="d-flex justify-content-around">
                     <input type="hidden" id="user" name="user" value="<?= $row['user_id'] ?>">
                     <button type="submit" name="edit_user" class="btn btn-primary">Submit</button>
-                    <a class="btn btn-info" href="Login.php">Login</a>
+                    <a class="btn btn-info" href="../Inpages/">Back Home</a>
                 </div>
             </form>
+            
         </div>
         <?php
     }else{

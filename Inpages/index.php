@@ -15,7 +15,7 @@ $user_id = $_SESSION['user_id'];
 <main>
 
 <div class="container p-3">
-     <h3>Welcome <a href="data.php?user=<?php echo $user_id ?>"><?php echo $_SESSION['username'] ?></a> </h3>
+     <h3>Welcome <a class="btn btn-primary" href="data.php?user=<?php echo $user_id ?>"><?php echo $_SESSION['username'] ?></a> </h3>
 </div>
 
     <div class="container mt-3">
