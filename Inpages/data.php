@@ -46,11 +46,13 @@ if(isset($_GET['deleteUser'])){
     if($dataToDelete){
         $_SESSION['message'] = "User Deleted successfully";
         $_SESSION['message_type'] = "success";
+        session_destroy();
        header('Location: ../');
+       exit;
     }else{
         $_SESSION['message'] = "Couldn't Delete User, Error Occured.";
         $_SESSION['message_type'] = "danger";
        header('Location: ../Inpages/');
-       
+       exit;
     }
 }
