@@ -1,15 +1,19 @@
-<?php 
+<?php
+session_start();
 
-include  '../config/post_login.php'; include '../config/cssheaders.php'; include '../config/fetch.php';
+include '../config/post_login.php';
+include '../config/cssheaders.php';
+include '../config/fetch.php';
 
+// Check login session
 if(!isset($_SESSION['username'])){
-    $_SESSION['message'] = "You have to Login First in order to continue exploring!";
+    $_SESSION['message'] = "You have to login first to continue exploring!";
     $_SESSION['message_type'] = "danger";
-   header('Location: ../');
+    header('Location: ../pages/Login.php');
+    exit();
 }
+
 $user_id = $_SESSION['user_id'];
-
-
 ?>
 
 <main>

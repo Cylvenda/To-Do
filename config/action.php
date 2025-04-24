@@ -53,6 +53,7 @@ function getUser($conn, $email, $password){
         $_SESSION['message'] = "All Field must be filled!";
         $_SESSION['message_type'] = "danger";
        header('Location: ../pages/Login.php');
+       exit();
     }else{
         
         try {
@@ -68,7 +69,7 @@ function getUser($conn, $email, $password){
                     $_SESSION['user_id'] = $row['user_id'];
                     $_SESSION['message'] = "You have Loggedin successfully!!";
                     $_SESSION['message_type'] = "success";
-                    header('Location: ../Inpages/');
+                    header('Location: ../Inpages/welcome.php');
     
                 }else{
                     $_SESSION['message'] = "Incorrect Password, Make sure your password written is correctly";
