@@ -69,6 +69,7 @@ function getUser($conn, $email, $password){
                     $_SESSION['user_id'] = $row['user_id'];
                     $_SESSION['message'] = "You have Loggedin successfully!!";
                     $_SESSION['message_type'] = "success";
+                    
                     header('Location: ../Inpages/welcome.php');
     
                 }else{
